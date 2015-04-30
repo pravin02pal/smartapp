@@ -1,5 +1,9 @@
 SmartApp::Application.routes.draw do
-  resources :rooms
+  resources :rooms do
+    member do
+      get :delete
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
