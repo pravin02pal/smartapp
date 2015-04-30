@@ -46,7 +46,7 @@ class RoomsController < ApplicationController
   
   def delete
     @room = Room.find(params[:id])
-    if @user.destroy
+    if @room.destroy
       render json: {:success => true, :message=> "Room has been deleted successfully"}, status: 201
     else
       render json: {:success => false, :errors => "An error occured during deleting room"}, status: 422 and return
