@@ -42,8 +42,9 @@ class UsersController < ApplicationController
   end
   
   def update_profile
-    if @user.update_attributes(params[:user])
-      render json: {:success => true, :api_token => @user.api_token, :users=> JSON.parse(@user.to_json), :message => 'Profile udated successfully'}, status: 201
+    user = User.find(params[:id])
+    if user.update_attributes(params[:user])
+      render json: {:success => true, :api_token => user.api_token, :users=> JSON.parse(user.to_json), :message => 'Profile udated successfully'}, status: 201
     else
       validation_errors(@user.errors)
     end
