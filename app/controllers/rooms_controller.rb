@@ -52,5 +52,4 @@ class RoomsController < ApplicationController
       render json: {:success => false, :errors => "An error occured during deleting room"}, status: 422 and return
     end
   end
-  end
 end
