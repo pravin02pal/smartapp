@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
 
   # PUT /rooms/1
   # PUT /rooms/1.json
-  def update
+  def update_room
     @room = Room.find(params[:id])
     if @room.update_attributes(params[:room])
       render json: {:success => true, :message=> "Room has been updated successfully"}, status: 201

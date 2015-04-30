@@ -1,5 +1,8 @@
 SmartApp::Application.routes.draw do
   resources :rooms do
+    collection do
+      post :update_room
+    end
     member do
       get :delete
     end
