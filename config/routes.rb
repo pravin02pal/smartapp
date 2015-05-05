@@ -30,7 +30,9 @@ SmartApp::Application.routes.draw do
       get :delete
     end
   end
-
+  
+  resources :rents
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
