@@ -27,6 +27,11 @@ class UsersController < ApplicationController
     end
   end
   
+  def show
+    user = User.find(params[:id])
+    render json: {:success => true, :api_token => @user.api_token, :users=> JSON.parse(user.to_json)}, status: 201
+  end
+  
   def delete
     @user = User.find(params[:id])
     if @user.destroy
